@@ -1,0 +1,462 @@
+:root{
+    --m-f-color:white;
+    --m-fs-color:rgb(197, 191, 191);
+    --m-bg-color:rgba(0, 0, 0, 0.9);
+    --m-bg-s-color:rgba(0, 0, 0, 0.805);
+    --m-i-color:orange;
+    --m-ir-color:red;
+    --m-ip-color:pink;
+}
+
+body{
+    margin: 0;
+    text-align: center;
+}
+
+
+
+/*animations*/
+
+@keyframes jiggle {
+    from{
+        transform: rotateZ(-10deg);
+    }
+    to{
+        transition: rotateZ(45deg);
+    }
+}
+
+
+
+
+
+
+
+
+/*scrollbar styling*/
+::-webkit-scrollbar{
+   width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background:var(--m-fs-color);
+    border-radius: 12px; 
+}
+::-webkit-scrollbar-thumb:active {
+    background: var(--m-i-color); /* Color when the thumb is active (clicked) */
+}
+
+
+/*custom classes*/
+
+.hover-pointer{
+    cursor:pointer;
+}
+
+.red{
+    color: red;
+}
+
+
+
+/*the heading and the search bar*/
+#app{
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#fav-button {
+    padding: 4px;
+    background-color: var(--m-bg-color);
+    color: var(--m-f-color);
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#fav-button:active{
+    color: var(--m-i-color);
+}
+
+#main-image{
+    animation: jiggle 0.8s ease-in-out 0s infinite alternate;
+}
+
+
+
+
+
+
+/*search bar*/
+
+
+#search{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    background-color: var(--m-bg-color);
+    border-radius: 5px;
+    padding: 1px;
+}
+
+#search-bar{
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+    background-color: var(--m-bg-color);
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    color: var(--m-f-color);
+    font-size: 1.5rem;
+    height: 60px;
+    box-sizing: border-box;
+    padding-left:10px ;
+}
+#meals-search{
+    width: 85%;
+    background-color: transparent;
+    color: var(--m-f-color);
+    border-radius: 5px;
+    border: none;
+}
+#meals-search::placeholder{
+    color: var(--m-fs-color);
+}
+
+#meals-search:focus{
+    outline: none;
+}
+#search-icon{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+}
+
+#search-icon:active{
+    transform: scale(1.2);
+}
+
+#search-icon:hover{
+    color: var(--m-ip-color);
+    
+}
+
+
+
+
+
+/*search results*/
+
+#search-results{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 0px 5px 5px 5px;
+    color:var(--m-f-color);
+    list-style: none;
+    margin-top: 0;
+    font-size: 1.1rem;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.search-results-item{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    height: 50px;
+    align-content: center;
+    border-top: 1px solid var(--m-fs-color);
+}
+
+
+
+.selected{
+    background-color: var(--m-fs-color);
+}
+
+.search-results-item-text{
+    box-sizing: border-box;
+    padding-left: 5px;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: start;
+    align-content: center;
+}
+.favorite-button{
+    width: 10%;
+    height: 100%;
+}
+
+.fa-heart:hover{
+    transform: scale(1.5);
+    color:var(--m-ir-color);
+}
+.fa-heart{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+
+/*search place holder*/
+
+#loading-results{
+    color:var(--m-fs-color);
+    text-align: left;
+    padding: 5px;
+    display: none;
+}
+
+#loading-results .placeholder{
+    height: 30px;
+    margin-top: 10px;
+}
+
+
+
+
+/*meals-display*/
+#meals{
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    margin-top: 80px;
+}
+#one-meal{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+   
+#one-meal .card{
+    text-align: center;
+    width: 75%;
+    border: none;
+    box-shadow: 0 0 10px 0.5px var(--m-fs-color);
+}
+
+#one-meal .meal-info{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 10%;
+}
+
+.meal-ingredients{
+    margin-bottom: 100px;
+}
+
+.card-title{
+    font-family:cursive;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+
+.meal-links .btn-primary{
+    background-color: red;
+    font-weight:bold ;
+}
+
+
+
+/*for the one meal placeholder*/
+
+#one-meal-placeholder{
+    width: 100%;
+    height: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    display: none;
+}
+
+.om-ph-right{
+    width: 80%;
+}
+#one-meal-placeholder .card{
+    width: 100%;
+    height: 400px;
+}
+
+.om-ph-right img{
+    width: 100%;
+    height: 200px;
+}
+
+.om-ph-left{
+    width: 25%;
+}
+
+
+
+
+/*styling many meals display*/
+#many-meals{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#many-meals .card-title{
+    margin-bottom: 5px;
+}
+
+#many-meals .card{
+    border: none;
+    box-shadow: 0 0 5px 0.1px var(--m-fs-color);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: 18rem;
+}
+
+.btn-primary{
+    width: 70%;
+    margin:auto;
+}
+
+#many-meals .favorites{
+    height: 10px;
+    display: inline;
+}
+
+#many-meals .favorites:hover{
+   cursor: pointer;
+   color: var(--m-b-color);
+   font-size: 2rem;
+}
+
+
+#many-meals .meal-fav{
+    height: 10px;
+    display: inline;
+}
+
+#many-meals .meal-fav:hover{
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.meal-links .btn{
+    margin-bottom: 80px;
+}
+
+.one-fav{
+    font-size: 3rem;
+}
+
+.one-fav:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*for styling on mobile devices*/
+
+/*two break points 800 and 500*/
+
+@media only screen and (max-width:800px){
+
+    #fav-button{
+        width: 100px;
+        font-size: 0.7rem;
+    }
+
+    #search{
+        width: 90%;
+    }
+
+    #search-bar{
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    #main-image{
+        width: 80px;
+    }
+
+    #search-icon{
+        font-size: 1.5rem;
+    }
+
+    #search-results{
+        font-size: 0.9rem;
+    }
+
+    #many-meals .card{
+        width: 24rem;
+    }
+
+    #one-meal{
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        box-sizing: border-box;
+    }
+
+    #one-meal .card{
+        width: 100%;
+    }
+
+    #one-meal .meal-info{
+        width: 80%;
+        padding-bottom: 100px;
+        margin: auto;
+        margin-top: 20px;
+    }
+    #one-meal .meal-ingredients{
+        margin-bottom:30px;
+    }
+    #one-meal .meal-links .btn{
+        margin-bottom: 20px;
+    }
+}
+
+
+@media only screen and (max-width:500px){
+
+ #main-image{
+        width: 60px;
+}
+
+
+  .card-text{
+    font-size: 0.8rem;
+  }
+}
