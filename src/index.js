@@ -256,7 +256,7 @@ function initializeApp(){
                     //for toggling in favorites section
 
                     toggleFavoriteInFavorites:(mealId,targetFav)=>{
-                        console.log(favoriteMap.get(mealId));
+                        // console.log(favoriteMap.get(mealId));
                         //remove it from favorites
                         favoriteMap.delete(mealId);
                         //set the favorites in localStorage again
@@ -373,7 +373,7 @@ function initializeApp(){
             //for toggling in favoritesmeals in favorites
             if(e.target.className.includes("favorites")){
                 const mealId=e.target.dataset.mealid;
-                console.log(mealId);
+                // console.log(mealId);
                 toggleFunctions.toggleFavoriteInFavorites(mealId,e.target);
             }
 
